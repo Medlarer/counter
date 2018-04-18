@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="txt"/>
+        <input type="button" id="btn" value="提交" onclick="sendMsg();"/>
+        <input type="button" id="close" value="关闭连接" onclick="closeConn();"/>
+    </div>
+    <div id="content"></div>
+
+    <script type="text/javascript">
+        var socket = new WebSocket("ws://127.0.0.1:8003/chatsocket");
+        socket.openen = function () {
+//            与服务器连接成功后，自动执行
+            var newTag = document.createElement("div");
+            newTag.innerHTML = "【连接成功】"
+        }
+    </script>
+
+</body>
+</html>
